@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{12} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 鉴权判定与测试日志：始终输出，便于核对调用方/动作/凭证状态/策略版本/结果 -->
+    <logger name="AUTHZ-AUDIT" level="INFO"/>
+    <logger name="AUTHZ-TEST" level="INFO"/>
+
+    <root level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
